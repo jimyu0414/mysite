@@ -1,0 +1,91 @@
+/* Sass Mixins */
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+// All transitions
+%transition {
+  transition: all 0.3s ease;
+}
+
+// SVG
+$path: "../img/";
+
+// Background img fallback png
+
+@mixin svg-bg($name) {
+  background-image: url('#{$path}#{$name}.png'); /* IF IE8 */
+  background-image: none, url('#{$path}#{$name}.svg');
+}
+
+// Background fallback details
+@mixin svg-bg($name, $extension: png, $color: transparent, $position: 0 0, $repeat: no-repeat) {
+  background: url('#{$path}#{$name}.#{$extension}') $color $position $repeat;
+  background: none, url('#{$path}#{$name}.svg') $color $position $repeat;
+}
+
+// Use this to get svg bg change color interchangibly
+/* Not IE11 supported */
+@mixin svg-fill($name, $fill) {
+    background: url('data:image/svg+xml;charset=utf8,#{svg-fill($name, $fill)}');
+}
+
+@mixin svg-mask($name) {
+  -webkit-mask: none, url('#{$path}#{$name}.svg') no-repeat;
+  mask: none, url('#{$path}#{$name}.svg') no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+/* Breakpoints */
+@mixin breakpoint($point) {
+    @if $point == xs {
+        @media (min-width: 30rem) { @content; }
+    }
+    @else if $point == s {
+        @media (min-width: 40rem) { @content; }
+    }
+    @else if $point == m {
+        @media (min-width: 48rem) { @content; }
+    }
+    @else if $point == l {
+        @media (min-width: 60rem) { @content; }
+    }
+    @else if $point == xl {
+        @media (min-width: 64rem) { @content; }
+    }
+    @else if $point == xxl {
+        @media (min-width: 80rem) { @content; }
+    }
+}
+
+/* SVG Encoder */
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
+
+$encoding-reference: (
+    //('%','%25'),  // Encode "%" first, otherwise the "%" from encoded code would be encoded again (which would be bad)
+    ('<','%3C'),
+    ('>','%3E'),
+    //('"','%22'),  // Replace " with ' because that's shorter than %22 and normally working
+    ('"','\''),
+    ('#','%23'),
+    ('&','%26')
+);
+
+@function svg-encode($svg) {
+    @each $char, $encoded in $encoding-reference {
+        $svg: str-replace($svg, $char, $encoded);
+    }
+    @return 'data:image/svg+xml,' + $svg;
+}
