@@ -8,39 +8,8 @@
   animation: #{$str};
 }
 
-// All transitions
-%transition {
-  transition: all 0.3s ease;
-}
 
-// SVG
-$path: "../img/";
 
-// Background img fallback png
-
-@mixin svg-bg($name) {
-  background-image: url('#{$path}#{$name}.png'); /* IF IE8 */
-  background-image: none, url('#{$path}#{$name}.svg');
-}
-
-// Background fallback details
-@mixin svg-bg($name, $extension: png, $color: transparent, $position: 0 0, $repeat: no-repeat) {
-  background: url('#{$path}#{$name}.#{$extension}') $color $position $repeat;
-  background: none, url('#{$path}#{$name}.svg') $color $position $repeat;
-}
-
-// Use this to get svg bg change color interchangibly
-/* Not IE11 supported */
-@mixin svg-fill($name, $fill) {
-    background: url('data:image/svg+xml;charset=utf8,#{svg-fill($name, $fill)}');
-}
-
-@mixin svg-mask($name) {
-  -webkit-mask: none, url('#{$path}#{$name}.svg') no-repeat;
-  mask: none, url('#{$path}#{$name}.svg') no-repeat;
-  -webkit-mask-size: cover;
-  mask-size: cover;
-}
 
 /* Breakpoints */
 @mixin breakpoint($point) {

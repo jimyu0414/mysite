@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
 
-          <SVG name="react-logo" className="App-logo" fillColor="#fff"/>
+          <SVG name="react-logo" className="App-logo" fillColor="#000"/>
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
