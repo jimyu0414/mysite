@@ -1,8 +1,82 @@
 /* Sass Mixins */
 /* Breakpoints */
 /* SVG Encoder */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 .front-page {
-  background-color: #41b39e; }
+  background-color: #41b39e;
+  height: 100%; }
+
+.header {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-top: 1px solid #e5e5e5; }
+  .header .container {
+    display: flex; }
+  .header ul {
+    list-style: none; }
+  .header li {
+    float: left;
+    margin-left: 1.5rem;
+    cursor: pointer; }
+    .header li:hover {
+      color: #222; }
+  .header__logo {
+    font-size: 2.3125rem;
+    font-weight: 800;
+    flex-basis: 10rem; }
+    .header__logo span {
+      vertical-align: middle; }
+    .header__logo span:after {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: #41b39e;
+      display: inline-block;
+      border-radius: 100%;
+      margin-left: 1rem; }
+  .header__menu {
+    font-weight: 600;
+    color: #707070;
+    flex: 1; }
+    .header__menu ul {
+      padding: 0;
+      text-align: center; }
+    .header__menu li {
+      margin-top: 0.4rem;
+      -webkit-transition: all 0.3s;
+      /* For Safari 3.1 to 6.0 */
+      transition: all 0.3s; }
+      @media (min-width: 60rem) {
+        .header__menu li {
+          margin-left: 2.4rem; } }
+      .header__menu li:hover {
+        margin-top: 0.1rem; }
+  .header__social-icons svg {
+    width: 1rem;
+    fill: #707070; }
+    .header__social-icons svg:hover {
+      fill: #222; }
+  .header__social-icons .icon-facebook {
+    width: .75rem; }
+  .header__social-icons .icon-linkedin {
+    width: 1.25rem; }
+  .header__social-icons .icon-github {
+    width: 1.35rem; }
+
+#root {
+  height: 100%;
+  width: 100%; }
+
+.container {
+  max-width: 80rem;
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: content-box; }
 
 html {
   height: 100%;
@@ -17,3 +91,10 @@ body {
   padding: 0;
   font-family: sans-serif;
   height: 100%; }
+
+.myApp {
+  height: 100%;
+  width: 100%; }
+
+h1, h2 {
+  margin: 0; }

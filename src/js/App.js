@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
-// import logo from '../logo.svg';
-import SVG from './SVG';
+import Header from './header-component'
+import Home from './home-component'
 import '../App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-
-          <SVG name="react-logo" className="App-logo" fillColor="#000"/>
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div class="myApp">
+        <Header />
+        <Home />
       </div>
     );
   }

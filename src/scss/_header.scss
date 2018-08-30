@@ -1,0 +1,88 @@
+.header{
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-top: 1px solid #e5e5e5;
+
+  .container{
+      display: flex;
+  }
+
+  ul{
+    list-style: none;
+  }
+  li{
+    float: left;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    &:hover{
+      color: #222;
+    }
+  }
+
+  &__logo{
+    font-size: 2.3125rem;
+    font-weight: 800;
+    flex-basis: 10rem;
+
+    span{
+      vertical-align: middle;
+    }
+    span:after{
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: #41b39e;
+      display: inline-block;
+      border-radius: 100%;
+      margin-left: 1rem;
+    }
+  }
+
+  &__menu{
+    font-weight: 600;
+    color: #707070;
+    flex: 1;
+
+    ul{
+      padding: 0;
+      text-align: center;
+    }
+    li{
+      margin-top: 0.4rem;
+      -webkit-transition: all 0.3s; /* For Safari 3.1 to 6.0 */
+      transition: all 0.3s;
+      @include breakpoint(l){
+        margin-left: 2.4rem
+      }
+
+      &:hover{
+        margin-top: 0.1rem;
+      }
+    }
+
+
+  }
+
+  &__social-icons{
+    svg{
+      width: 1rem;
+      fill: #707070;
+      &:hover{
+        fill: #222;
+      }
+    }
+    .icon-facebook{
+      width: .75rem;
+    }
+    .icon-linkedin{
+      width: 1.25rem;
+    }
+    .icon-github{
+      width: 1.35rem;
+    }
+  }
+}
