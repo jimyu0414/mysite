@@ -1,4 +1,27 @@
 .front-page{
-  background-color: #41b39e;
+  // background-color: #41b39e;
+  background-color: #fff;
   height: 100%;
+
+  .container{
+      display: flex;
+      align-items: center;
+      height: 100%;
+  }
+
+  &__content{
+    flex-basis: 50%;
+    margin-top: -10rem;
+  }
+
+  &__image{
+      &--professions{
+
+      }
+      &--sheep{
+        img{
+           width: 520px;
+        }
+      }
+  }
 }
