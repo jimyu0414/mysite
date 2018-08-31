@@ -24,7 +24,7 @@ class Home extends Component {
       let ary = ['hint','pencup','guitar','snowboard','chat']
 
       let offset = 0;
-      ary.forEach(function(element){
+      ary.forEach((element) =>{
 
         setTimeout(() => {
           console.log(element)
