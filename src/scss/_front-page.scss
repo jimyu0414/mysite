@@ -2,26 +2,99 @@
   // background-color: #41b39e;
   background-color: #fff;
   height: 100%;
+  overflow: hidden;
 
   .container{
       display: flex;
       align-items: center;
       height: 100%;
+      position: relative;
   }
 
   &__content{
-    flex-basis: 50%;
+    flex-basis: 60%;
     margin-top: -10rem;
+
+    h1{
+      font-size: 2.5rem;
+      text-shadow: 3px 1px 0px rgba(0,0,0,0.11);
+      font-weight: 700;
+      color: #444;
+    }
+
+    h1:after{
+      display: inline-block;
+      content: '.';
+      font-size: 3.5rem;
+      opacity: 1;
+      margin-left: 2rem;
+    }
+
+    h2{
+      font-size: 30px;
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+
+    p{
+      font-size: 1rem;
+      line-height: 1.5rem;
+      max-width: 39rem;
+      color: #505050;
+    }
+
+    .divider{
+      width: 7rem;
+      height: 0.0625rem;
+      background: #404040;
+      margin: 1rem 0;
+    }
+
+    ul{
+      display: block;
+      margin-top: 1.25rem;
+      height: 3rem;
+    }
+
+    li{
+      display: inline-block;
+    }
+
+    li:not(:first-of-type){
+      margin-left: 1.25rem;
+    }
+
+    li:nth-child(2){
+      .icon-profession{
+        fill: #707070;
+      }
+    }
+
+    .icon-profession{
+      width: 3rem;
+      fill: #505050;
+    }
+
   }
 
-  &__image{
-      &--professions{
 
+    img{
+      position: absolute;
+      width: 430px;
+      bottom: -5rem;
+      right: 0;
+      z-index: 0;
+      @include breakpoint(l){
+        width: 480px;
       }
-      &--sheep{
-        img{
-           width: 520px;
-        }
-      }
-  }
+      display: none;
+    }
+
+}
+
+
+@keyframes iconstage {
+    0%   {transform: scale(0); opacity:0;}
+    50%  {transform: scale(1.2);}
+    100% {transform: scale(1); opacity:1;}
 }

@@ -161,8 +161,8 @@ class SVG extends Component{
       }
 
       case "guitar": {
-        svg = <svg  className={this.props.className} xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
-	 viewBox="0 0 465.072 465.072" style="enable-background:new 0 0 465.072 465.072;">
+        svg = <svg className={this.props.className} xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+	 viewBox="0 0 465.072 465.072">
           <g>
           	<path d="M85.266,308.804c-2.929-2.927-7.677-2.929-10.607,0c-2.929,2.93-2.929,7.678,0,10.607l70.997,70.998
           		c1.465,1.464,3.384,2.196,5.304,2.196c1.919,0,3.839-0.732,5.304-2.196c2.929-2.93,2.929-7.678,0-10.607L85.266,308.804z"/>
@@ -202,8 +202,8 @@ class SVG extends Component{
       }
 
       case "snowboard":{
-        svg = <svg   className={this.props.className} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-	 viewBox="0 0 188.737 188.737" style="enable-background:new 0 0 188.737 188.737;">
+        svg = <svg  className={this.props.className} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 viewBox="0 0 188.737 188.737" >
 <path d="M29.54,188.737c-7.471,0-14.941-2.844-20.628-8.531l-0.381-0.381c-11.374-11.375-11.374-29.883,0-41.257L138.568,8.531
 	c11.373-11.375,29.883-11.375,41.256,0l0.383,0.384c11.373,11.372,11.373,29.88-0.002,41.254L50.168,180.206
 	C44.481,185.894,37.011,188.737,29.54,188.737z M159.196,4.987c-6.457,0-12.527,2.514-17.093,7.079L12.066,142.104
