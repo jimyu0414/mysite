@@ -5,8 +5,13 @@ import ChangingText from './changing-text-component';
 // import TextLoop from 'react-text-loop';
 
 class Home extends Component {
+
+
   state = {
-    professionIcons:[],
+    professionIcons:[
+
+    ],
+    count: 0,
   }
 
 
@@ -14,28 +19,88 @@ class Home extends Component {
 
   showProfessionIcons = () => {
     const icons = this.state.professionIcons.map((icon,key) =>{
-      return <li key={key}><SVG name={icon} className="icon-profession"/></li>
+      return <li key={key}><SVG name={icon.name} className={icon.class} /></li>
     })
     return icons;
   }
 
-  componentDidMount(){
 
-      let ary = ['hint','pencup','guitar','snowboard','chat']
+  hightLightIcons = (count) => {
+    let iconArray = [];
+    let index =  count;
+        if(index > 4){
+          index = 0;
+        }
 
-      let offset = 0;
-      ary.forEach((element) =>{
+    this.state.professionIcons.forEach((element, i) => {
 
-        setTimeout(() => {
-          console.log(element)
-            this.setState({
-              professionIcons: this.state.professionIcons.concat(element)
-            });
-        }, 2000 + offset)
-        offset+= 1000
-      });
+      element.class = "icon-profession animate-popout icon-profession-inactive";
+      if(i === index){
+        element.class = "icon-profession animate-popout icon-profession-active";
+      }
+      iconArray.push(element);
+    })
+
+    this.setState({
+      count:  index + 1,
+      professionIcons: iconArray,
+    })
+  }
+
+
+  setTimingToLoad = (time, icon) =>{
+
+    setTimeout(() => {
+        this.setState({
+          professionIcons: this.state.professionIcons.concat(icon)
+        });
+    }, time)
 
   }
+
+  componentDidMount(){
+      //icon animation on page load
+      let iconArray = [
+        {
+          name: "hint",
+          class: "icon-profession animate-popout icon-profession-inactive",
+        },
+        {
+          name: "pencup",
+          class: "icon-profession animate-popout icon-profession-inactive",
+        },
+        {
+          name: "guitar",
+          class: "icon-profession animate-popout icon-profession-inactive",
+        },
+        {
+          name: "snowboard",
+          class: "icon-profession animate-popout icon-profession-inactive",
+        },
+        {
+          name: "chat",
+          class: "icon-profession animate-popout icon-profession-inactive",
+        }
+      ];
+
+      this.setTimingToLoad(1000, iconArray[0])
+      this.setTimingToLoad(1200, iconArray[1])
+      this.setTimingToLoad(1400, iconArray[2])
+      this.setTimingToLoad(1600, iconArray[3])
+      this.setTimingToLoad(1800, iconArray[4])
+
+
+
+      // high light icon after page load
+      setTimeout(() => {
+        this.hightLightingIcons = setInterval(() =>
+          this.hightLightIcons(this.state.count), 2000
+        )
+      }, 0 )
+
+  }
+
+
 
 
   render(){

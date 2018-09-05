@@ -1,0 +1,10 @@
+.animate-popout{
+  animation-name: popout;
+  animation-duration: 0.5s;
+}
+
+@keyframes popout{
+    0%   {transform: scale(0); opacity:0;}
+    50%  {transform: scale(1.2);}
+    100% {transform: scale(1); opacity:1;}
+}

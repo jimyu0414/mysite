@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 class ChangingText extends Component{
+
   state = {
     textArray: ['WEB DESIGNER','FRONT-END DEVELOPER','GUITAR PLAYER','SNOWBOARDER','INTERPRETER'],
     text: 'DIGITAL DESIGNER',
@@ -17,7 +18,7 @@ class ChangingText extends Component{
   }
 
   componentDidMount(){
-     this.updateProfession = setInterval( ()=> this.changeText(this.state.textCount), 3000)
+     this.updateProfession = setInterval( ()=> this.changeText(this.state.textCount), 2000)
   }
 
   componentWillUnmount(){

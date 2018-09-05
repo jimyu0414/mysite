@@ -27,7 +27,7 @@
       content: '.';
       font-size: 3.5rem;
       opacity: 1;
-      margin-left: 2rem;
+      margin-left: 1.2rem;
     }
 
     h2{
@@ -64,11 +64,16 @@
       margin-left: 1.25rem;
     }
 
+    li:nth-child(4){
+      margin-right: 1rem;
+    }
+
     li:nth-child(2){
       .icon-profession{
         fill: #707070;
       }
     }
+
 
     .icon-profession{
       width: 3rem;
@@ -92,9 +97,6 @@
 
 }
 
-
-@keyframes iconstage {
-    0%   {transform: scale(0); opacity:0;}
-    50%  {transform: scale(1.2);}
-    100% {transform: scale(1); opacity:1;}
+.icon-profession-active{
+  fill: #a66037 !important;
 }
