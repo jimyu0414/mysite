@@ -28,7 +28,8 @@
     .front-page__content h2 {
       font-size: 30px;
       margin-top: 0.5rem;
-      font-weight: 300; }
+      font-weight: 300;
+      margin-bottom: 1.5rem; }
     .front-page__content p {
       font-size: 1rem;
       line-height: 1.5rem;
@@ -59,8 +60,7 @@
     width: 430px;
     bottom: -5rem;
     right: 0;
-    z-index: 0;
-    display: none; }
+    z-index: 0; }
     @media (min-width: 60rem) {
       .front-page img {
         width: 480px; } }
