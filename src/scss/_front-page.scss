@@ -14,7 +14,7 @@
   &__content{
     flex-basis: 60%;
     margin-top: -10rem;
-
+    position: relative;
     h1{
       font-size: 2.5rem;
       text-shadow: 3px 1px 0px rgba(0,0,0,0.11);
@@ -71,14 +71,14 @@
 
     li:nth-child(2){
       .icon-profession{
-        fill: #707070;
+        fill: #909090;
       }
     }
 
 
     .icon-profession{
       width: 3rem;
-      fill: #505050;
+      fill: #707070;
     }
 
   }
@@ -96,8 +96,18 @@
 
     }
 
+    .arrow-down{
+      width: 50px;
+      position: absolute;
+      left: 40%;
+      bottom: 11rem;
+      opacity: 0.7;
+      @include breakpoint(l){
+        left: 45%;
+      }
+    }
 }
 
 .icon-profession-active{
-  fill: #a66037 !important;
+  fill: #473025 !important;
 }

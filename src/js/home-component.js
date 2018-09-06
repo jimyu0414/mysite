@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SVG from './svg';
 import sheepGif from '../img/smoke-sheep.gif';
+import DownArrow from '../img/arrow-down-2.gif'
 import ChangingText from './changing-text-component';
 // import TextLoop from 'react-text-loop';
 
@@ -118,6 +119,7 @@ class Home extends Component {
               {this.showProfessionIcons()}
             </ul>
           </div>
+            <img className="arrow-down" src={DownArrow} alt='arrow_down'/>
           <div className="front-page__image">
                 <img src={sheepGif} alt='sheep' />
           </div>

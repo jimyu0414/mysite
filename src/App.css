@@ -13,7 +13,8 @@
     position: relative; }
   .front-page__content {
     flex-basis: 60%;
-    margin-top: -10rem; }
+    margin-top: -10rem;
+    position: relative; }
     .front-page__content h1 {
       font-size: 2.5rem;
       text-shadow: 3px 1px 0px rgba(0, 0, 0, 0.11);
@@ -51,10 +52,10 @@
     .front-page__content li:nth-child(4) {
       margin-right: 1rem; }
     .front-page__content li:nth-child(2) .icon-profession {
-      fill: #707070; }
+      fill: #909090; }
     .front-page__content .icon-profession {
       width: 3rem;
-      fill: #505050; }
+      fill: #707070; }
   .front-page img {
     position: absolute;
     width: 430px;
@@ -64,9 +65,18 @@
     @media (min-width: 60rem) {
       .front-page img {
         width: 480px; } }
+  .front-page .arrow-down {
+    width: 50px;
+    position: absolute;
+    left: 40%;
+    bottom: 11rem;
+    opacity: 0.7; }
+    @media (min-width: 60rem) {
+      .front-page .arrow-down {
+        left: 45%; } }
 
 .icon-profession-active {
-  fill: #a66037 !important; }
+  fill: #473025 !important; }
 
 .header {
   font-family: 'Open Sans', sans-serif;
