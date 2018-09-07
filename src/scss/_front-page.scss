@@ -12,9 +12,18 @@
   }
 
   &__content{
-    flex-basis: 60%;
-    margin-top: -10rem;
+    flex-basis: 100%;
+    margin-top: 0;
     position: relative;
+    text-align: center;
+    z-index: 1;
+
+    @include breakpoint(m){
+      flex-basis: 60%;
+      margin-top: -10rem;
+      text-align: left;
+    }
+
     h1{
       font-size: 2.5rem;
       text-shadow: 3px 1px 0px rgba(0,0,0,0.11);
@@ -27,14 +36,21 @@
       content: '.';
       font-size: 3.5rem;
       opacity: 1;
-      margin-left: 1.2rem;
+      margin-left: 0.2rem;
+
+      @include breakpoint(m){
+        margin-left: 1.2rem;
+      }
     }
 
     h2{
-      font-size: 30px;
+      font-size: 28px;
       margin-top: 0.5rem;
       font-weight: 300;
       margin-bottom: 1.5rem;
+      @include breakpoint(m){
+        font-size: 30px;
+      }
     }
 
     p{
@@ -48,7 +64,10 @@
       width: 7rem;
       height: 0.0625rem;
       background: #404040;
-      margin: 1rem 0;
+      margin: 1rem auto;
+      @include breakpoint(m){
+        margin: 1rem 0;
+      }
     }
 
     ul{
@@ -62,7 +81,10 @@
     }
 
     li:not(:first-of-type){
-      margin-left: 1.25rem;
+      margin-left: 1rem;
+      @include breakpoint(m){
+        margin-left: 1.25rem;
+      }
     }
 
     li:nth-child(4){
@@ -86,10 +108,19 @@
 
     img{
       position: absolute;
-      width: 430px;
-      bottom: -5rem;
-      right: 0;
+      width: 1200px;
+      bottom: -50%;
+      right: -50%;
       z-index: 0;
+      opacity: 0.03;
+
+      @include breakpoint(m){
+        width: 430px;
+        bottom: -5rem;
+        right: 0;
+        opacity: 1;
+      }
+
       @include breakpoint(l){
         width: 480px;
       }
@@ -97,11 +128,16 @@
     }
 
     .arrow-down{
-      width: 50px;
+      width: 40px;
       position: absolute;
-      left: 40%;
-      bottom: 11rem;
+      left: 45%;
+      bottom: 1rem;
       opacity: 0.7;
+      @include breakpoint(m){
+        left: 40%;
+        bottom: 11rem;
+        width: 50px;
+      }
       @include breakpoint(l){
         left: 45%;
       }
