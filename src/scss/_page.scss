@@ -2,10 +2,23 @@
   height: 100%;
   width: 100%;
 }
+
 .container {
     max-width: 80rem;
     margin: auto;
     padding-left: 1rem;
     padding-right: 1rem;
     box-sizing: content-box;
+  }
+
+  .hamburger{
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    z-index: 999;
+    cursor: pointer;
+
+    @include breakpoint(m){
+      display: none;
+    }
   }

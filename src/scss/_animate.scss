@@ -3,8 +3,45 @@
   animation-duration: 0.5s;
 }
 
+.animate-moveup{
+  animation-name: moveup;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+
+}
+
+.animate-movedown{
+  animation-name: movedown;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+
+}
+
 @keyframes popout{
     0%   {transform: scale(0); opacity:0;}
     50%  {transform: scale(1.2);}
     100% {transform: scale(1); opacity:1;}
+}
+
+
+@-webkit-keyframes moveup {
+    from {transform: translateY(100%);}
+    to {transform: translateY(0%);}
+}
+
+@keyframes moveup {
+    from {transform: translateY(100%);}
+    to {transform: translateY(0%);}
+}
+
+
+@-webkit-keyframes movedown {
+    from {transform: translateY(0%);}
+    to {transform: translateY(100%);}
+}
+
+/* Standard syntax */
+@keyframes movedown {
+    from {transform: translateY(0%);}
+    to {transform: translateY(100%);}
 }
