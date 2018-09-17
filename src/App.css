@@ -2,7 +2,9 @@
 /* Breakpoints */
 /* SVG Encoder */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Lobster");
 .front-page {
+  position: relative;
   background-color: #fff;
   height: 100%;
   overflow: hidden; }
@@ -21,14 +23,13 @@
       .front-page__content {
         margin-top: -10rem;
         text-align: left; } }
-    @media (min-width: 60rem) {
-      .front-page__content {
-        flex-basis: 60%; } }
     .front-page__content h1 {
-      font-size: 2.5rem;
-      text-shadow: 3px 1px 0px rgba(0, 0, 0, 0.11);
+      font-size: 3.5rem;
       font-weight: 700;
-      color: #444; }
+      color: #444;
+      font-family: 'Covered By Your Grace', cursive;
+      letter-spacing: 7px;
+      margin-bottom: 1rem; }
     .front-page__content h1:after {
       display: inline-block;
       content: '.';
@@ -49,7 +50,7 @@
     .front-page__content p {
       font-size: 0.875rem;
       line-height: 1.5rem;
-      max-width: 39rem;
+      max-width: 40rem;
       color: #505050; }
       @media (min-width: 48rem) {
         .front-page__content p {
@@ -116,6 +117,17 @@
   @media (min-width: 48rem) {
     .icon-profession-active {
       fill: #473025 !important; } }
+
+.my-avatar {
+  content: "";
+  background: url(/static/media/smoke-sheep.3ef0f1bd.gif);
+  background-repeat: no-repeat;
+  background-size: 104px 140px;
+  background-position: 17px 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  box-shadow: 1px 1px 5px -2px; }
 
 .header {
   font-family: 'Open Sans', sans-serif;
@@ -275,6 +287,16 @@
   animation-duration: 0.3s;
   animation-fill-mode: forwards; }
 
+.animate-fadeout {
+  animation-name: fadeout;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards; }
+
+.animate-fadein {
+  animation-name: fadein;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards; }
+
 @keyframes popout {
   0% {
     transform: scale(0);
@@ -309,6 +331,125 @@
     transform: translateY(0%); }
   to {
     transform: translateY(100%); } }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeout {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes ani-mouse {
+  0% {
+    opacity: 1;
+    top: 29%; }
+  15% {
+    opacity: 1;
+    top: 60%; }
+  50% {
+    opacity: 0;
+    top: 60%; }
+  100% {
+    opacity: 0;
+    top: 29%; } }
+
+@-moz-keyframes ani-mouse {
+  0% {
+    opacity: 1;
+    top: 29%; }
+  15% {
+    opacity: 1;
+    top: 60%; }
+  50% {
+    opacity: 0;
+    top: 60%; }
+  100% {
+    opacity: 0;
+    top: 29%; } }
+
+@keyframes ani-mouse {
+  0% {
+    opacity: 1;
+    top: 29%; }
+  15% {
+    opacity: 1;
+    top: 60%; }
+  50% {
+    opacity: 0;
+    top: 60%; }
+  100% {
+    opacity: 0;
+    top: 29%; } }
+
+.scroll-btn {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  bottom: 5%; }
+  @media (min-width: 48rem) {
+    .scroll-btn {
+      bottom: 15%; } }
+
+.scroll-btn > * {
+  display: inline-block;
+  line-height: 18px;
+  font-size: 13px;
+  font-weight: normal;
+  color: #E0E0E0;
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 2px; }
+
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *.active {
+  color: #ffffff; }
+
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *:active,
+.scroll-btn > *.active {
+  opacity: 0.8;
+  filter: alpha(opacity=80); }
+
+.scroll-btn .mouse {
+  position: relative;
+  display: block;
+  width: 27px;
+  height: 40px;
+  margin: 0 auto 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 2px solid #D8D8D8;
+  border-radius: 20px; }
+  @media (min-width: 48rem) {
+    .scroll-btn .mouse {
+      width: 27px;
+      height: 40px; } }
+
+.scroll-btn .mouse + span {
+  color: #888; }
+
+.scroll-btn .mouse > * {
+  position: absolute;
+  display: block;
+  top: 29%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  margin: -4px 0 0 -4px;
+  background: #888;
+  border-radius: 50%;
+  -webkit-animation: ani-mouse 2.5s linear infinite;
+  -moz-animation: ani-mouse 2.5s linear infinite;
+  animation: ani-mouse 2.5s linear infinite; }
 
 html {
   height: 100%;

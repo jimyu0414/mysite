@@ -1,4 +1,6 @@
+
 .front-page{
+  position: relative;
   // background-color: #41b39e;
   background-color: #fff;
   height: 100%;
@@ -23,15 +25,15 @@
       text-align: left;
     }
 
-    @include breakpoint(l){
-      flex-basis: 60%;
-    }
+
 
     h1{
-      font-size: 2.5rem;
-      text-shadow: 3px 1px 0px rgba(0,0,0,0.11);
+      font-size: 3.5rem;
       font-weight: 700;
       color: #444;
+      font-family: 'Covered By Your Grace', cursive;
+      letter-spacing: 7px;
+      margin-bottom: 1rem;
     }
 
     h1:after{
@@ -59,7 +61,7 @@
     p{
       font-size: 0.875rem;
       line-height: 1.5rem;
-      max-width: 39rem;
+      max-width: 40rem;
       color: #505050;
 
       @include breakpoint(m){
@@ -156,4 +158,16 @@
   @include breakpoint(m){
     fill: #473025 !important;
   }
+}
+
+.my-avatar{
+  content: "";
+    background: url(/static/media/smoke-sheep.3ef0f1bd.gif);
+    background-repeat: no-repeat;
+    background-size: 104px 140px;
+    background-position: 17px 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    box-shadow: 1px 1px 5px -2px;
 }
