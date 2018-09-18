@@ -1,16 +1,56 @@
 import React from 'react';
-
+import SVG from './svg';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import MyGoogleMap from './google-map-component'
 class HomePageTwo extends React.Component{
-  render(){
+
+render(){
+
     return(
-      <div className="front-page">
+      <div className="front-page front-page-scroll-enable">
         <div className="container">
-          <div className="front-page__content">
-            <div className="front-page__content--contact">
-              <div className="my-avatar"></div>
+          <div className="front-page__content frontSecondPageContent">
+
+            <div className="frontSecondPageContent__contact">
+              <div className="frontSecondPageContent__contact--avatar">
+                <div className="my-avatar"></div>
+                <h3>Yu Liu</h3>
+                <div>
+                  <span className='svg-icon'><SVG name='phone' className='icon-phone'/></span>
+                  <span className='svg-icon'><SVG name='email' className='icon-email'/></span>
+                </div>
+              </div>
+              <div className="frontSecondPageContent__contact--info">
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td><SVG name='company'/></td>
+                      <td>: &nbsp; Just Group</td>
+                    </tr>
+                      <tr>
+                        <td><SVG name='profession' /></td>
+                        <td>: &nbsp; Web Developer</td>
+                      </tr>
+                      <tr>
+                        <td><SVG name='mobile' /></td>
+                        <td>: &nbsp; 0410470100</td>
+                      </tr>
+                      <tr>
+                        <td><SVG name='location' /></td>
+                        <td>: &nbsp; Melbourne</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div className="google-map">
+                    <MyGoogleMap />
+                  </div>
+
+              </div>
             </div>
-            <div className="front-page__content--timeline">
+
+            <div className="frontSecondPageContent__timeline">
             </div>
+
           </div>
         </div>
       </div>

@@ -2,10 +2,14 @@ import React, {Component} from 'react';
 import ReactPageScroller from "react-page-scroller";
 import HomePageOne from './home-component-page-1';
 import HomePageTwo from './home-component-page-2';
-// import TextLoop from 'react-text-loop';
+import PropTypes from 'prop-types';
+
 
 class Home extends Component {
 
+  static propTypes = {
+    scrollUnavailable: PropTypes.func,
+  }
 
   constructor(props) {
       super(props);
@@ -18,19 +22,21 @@ class Home extends Component {
   };
 
   pageOnChange = (number) => {
-    console.log(number)
     if(number === 1){
       this.refs.pageone.appear();
     }
     if(number === 2){
       this.refs.pageone.disappear();
     }
-
   };
+
+  stopScroll = () => {
+    console.log('stop')
+  }
 
   render(){
     return(
-      <ReactPageScroller animationTimer={600} pageOnChange={this.pageOnChange} ref={c => this.reactPageScroller = c}>
+      <ReactPageScroller scrollUnavailable={this.stopScroll} animationTimer={600} pageOnChange={this.pageOnChange} ref={c => this.reactPageScroller = c}>
         <HomePageOne ref='pageone'/>
         <HomePageTwo />
       </ReactPageScroller>
