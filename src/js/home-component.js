@@ -4,6 +4,8 @@ import HomePageOne from './home-component-page-1';
 import HomePageTwo from './home-component-page-2';
 import PropTypes from 'prop-types';
 
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 class Home extends Component {
 
@@ -28,10 +30,13 @@ class Home extends Component {
     if(number === 2){
       this.refs.pageone.disappear();
     }
+
   };
 
+
+
   stopScroll = () => {
-    console.log('stop')
+
   }
 
   render(){
@@ -40,6 +45,7 @@ class Home extends Component {
         <HomePageOne ref='pageone'/>
         <HomePageTwo />
       </ReactPageScroller>
+
     );
   }
 }

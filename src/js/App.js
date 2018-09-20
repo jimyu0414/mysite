@@ -9,8 +9,8 @@ class App extends Component {
   render() {
     return (
       <div className="myApp">
-        <Header headerOpen='false'/>
         <Home />
+        <Header headerOpen={false}/>
       </div>
     );
   }

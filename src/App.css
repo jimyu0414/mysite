@@ -18,10 +18,13 @@
     position: relative; }
   .front-page__content {
     flex-basis: 100%;
-    margin-top: 0;
+    margin-top: -20%;
     position: relative;
     text-align: center;
     z-index: 1; }
+    @media (min-width: 40rem) {
+      .front-page__content {
+        margin-top: 0; } }
     @media (min-width: 48rem) {
       .front-page__content {
         margin-top: -10rem;
@@ -143,6 +146,8 @@
     .frontSecondPageContent {
       padding-top: 10%; } }
   .frontSecondPageContent__contact {
+    display: flex;
+    flex-wrap: wrap;
     flex-basis: 100%; }
     @media (min-width: 48rem) {
       .frontSecondPageContent__contact {
@@ -153,13 +158,13 @@
       background: #f8f8f8;
       padding: 1rem;
       text-align: center;
-      box-shadow: 2px 1px 10px #e5e5e5; }
+      box-shadow: 2px 1px 5px #e5e5e5;
+      flex-basis: 100%; }
       .frontSecondPageContent__contact--avatar svg {
         fill: #040404;
         width: 25px; }
       .frontSecondPageContent__contact--avatar .svg-icon {
         display: inline-block;
-        border: 1px solid #202020;
         border-radius: 100%;
         padding: .75rem;
         margin: 1rem 1rem .5rem 1rem;
@@ -170,13 +175,29 @@
         background: #202020; }
         .frontSecondPageContent__contact--avatar .svg-icon:first-child svg {
           fill: #fff; }
+    .frontSecondPageContent__contact--map {
+      flex: 1;
+      margin-top: 1.125rem;
+      flex-basis: 0; }
+      @media (min-width: 48rem) {
+        .frontSecondPageContent__contact--map {
+          flex-basis: 100%;
+          box-shadow: 2px 1px 5px #e5e5e5;
+          margin-top: 0; } }
     .frontSecondPageContent__contact--info {
-      font-size: 0.8rem;
+      font-size: 0.76rem;
       background: #f8f8f8;
-      margin-top: 1.5rem;
-      box-shadow: 2px 1px 10px #e5e5e5; }
+      margin-top: 1.125rem;
+      margin-right: 1.125rem;
+      box-shadow: 2px 1px 5px #e5e5e5;
+      flex-basis: 50%; }
+      @media (min-width: 48rem) {
+        .frontSecondPageContent__contact--info {
+          flex-basis: 100%;
+          margin-right: 0; } }
       .frontSecondPageContent__contact--info table {
-        padding: 1rem 1rem 0 1rem; }
+        padding: 1rem;
+        margin: auto; }
       .frontSecondPageContent__contact--info tr {
         height: 2rem; }
       .frontSecondPageContent__contact--info td {
@@ -185,8 +206,6 @@
       .frontSecondPageContent__contact--info svg {
         width: 25px;
         fill: #606060; }
-      .frontSecondPageContent__contact--info .google-map {
-        margin-top: 1rem; }
 
 .header {
   font-family: 'Open Sans', sans-serif;

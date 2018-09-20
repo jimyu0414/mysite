@@ -1,7 +1,7 @@
 import React from 'react';
 import SVG from './svg';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
-import MyGoogleMap from './google-map-component'
+import MyGoogleMap from './google-map-component';
+import GoogleMaps from 'simple-react-google-maps';
 class HomePageTwo extends React.Component{
 
 render(){
@@ -37,14 +37,13 @@ render(){
                       </tr>
                       <tr>
                         <td><SVG name='location' /></td>
-                        <td>: &nbsp; Melbourne</td>
+                        <td>: &nbsp; Melbourne, Vic</td>
                       </tr>
                     </tbody>
                   </table>
-                  <div className="google-map">
-                    <MyGoogleMap />
-                  </div>
-
+              </div>
+              <div className="frontSecondPageContent__contact--map">
+                  <MyGoogleMap />
               </div>
             </div>
 
