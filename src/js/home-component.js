@@ -3,9 +3,7 @@ import ReactPageScroller from "react-page-scroller";
 import HomePageOne from './home-component-page-1';
 import HomePageTwo from './home-component-page-2';
 import PropTypes from 'prop-types';
-
-import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/styles.css';
+import PageSlider from './page-slider';
 
 class Home extends Component {
 
@@ -30,22 +28,28 @@ class Home extends Component {
     if(number === 2){
       this.refs.pageone.disappear();
     }
-
   };
 
+  componentDidMount(){
+    var scrollPos = 0;
+    window.onscroll = function (e) {
+      if ((document.body.getBoundingClientRect()).top > scrollPos)
+ 		{console.log(e+'up')}
+ 	else{console.log(e+'down')}
 
-
-  stopScroll = () => {
-
+  scrollPos = (document.body.getBoundingClientRect()).top;
+    }
   }
 
   render(){
     return(
-      <ReactPageScroller scrollUnavailable={this.stopScroll} animationTimer={600} pageOnChange={this.pageOnChange} ref={c => this.reactPageScroller = c}>
-        <HomePageOne ref='pageone'/>
-        <HomePageTwo />
-      </ReactPageScroller>
-
+      // <ReactPageScroller scrollUnavailable={this.stopScroll} animationTimer={600} pageOnChange={this.pageOnChange} ref={c => this.reactPageScroller = c}>
+      //   <HomePageOne ref='pageone'/>
+      //   <HomePageTwo />
+      // </ReactPageScroller>
+      <div>
+      <PageSlider />
+      </div>
     );
   }
 }

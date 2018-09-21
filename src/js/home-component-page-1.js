@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import SVG from './svg';
-import sheepGif from '../img/smoke-sheep.gif';
 import ChangingText from './changing-text-component';
 
 class HomePageOne extends Component{
@@ -13,18 +12,18 @@ class HomePageOne extends Component{
 
       ],
       count: 0,
-      pageOneWrapperClass: 'front-page',
+      pageOneWrapperClass: 'front-page front-page-land',
     }
 
     appear = () => {
       this.setState({
-        pageOneWrapperClass: 'front-page animate-fadein',
+        pageOneWrapperClass: 'front-page front-page-land animate-fadein',
       })
     }
 
     disappear = () => {
         this.setState({
-          pageOneWrapperClass: 'front-page animate-fadeout',
+          pageOneWrapperClass: 'front-page front-page-land animate-fadeout',
         })
     }
 
@@ -125,7 +124,7 @@ class HomePageOne extends Component{
               <ChangingText />
               <div className="divider"></div>
               <p>
-                Hi there, my name is Yu Liu. I’ve been working in Web Industry for 3 years. Designing websites and all assets. I also take part in front-end web development and specialised in HTML, CSS/SASS, JS, NPM, Webpack, GIt, etc. Before I became a web developer I work as a freelance graphic designer, working with logos, flyers, posters, websites, etc.
+                Hi there, my name is Yu Liu. I’ve been working in Web Industry for 3 years. Design websites and all related assets. I also work in front-end web development and specialised in HTML, CSS/SASS, JS, NPM, Webpack, GIt, etc. Before I became a web developer I work as a freelance graphic designer, working with logos, flyers, posters, websites, etc.
               </p>
               <ul>
                 {this.showProfessionIcons()}
@@ -140,9 +139,6 @@ class HomePageOne extends Component{
                <span>scroll</span>
             </span>
 
-            <div className="front-page__image">
-                  <img src={sheepGif} alt='sheep' />
-            </div>
           </div>
         </div>
       );

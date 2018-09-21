@@ -2,12 +2,13 @@ import React from 'react';
 import SVG from './svg';
 import MyGoogleMap from './google-map-component';
 import GoogleMaps from 'simple-react-google-maps';
+import sheepGif from '../img/smoke-sheep.gif';
 class HomePageTwo extends React.Component{
 
 render(){
 
     return(
-      <div className="front-page front-page-scroll-enable">
+      <div className="front-page front-page-about front-page-scroll-enable">
         <div className="container">
           <div className="front-page__content frontSecondPageContent">
 
@@ -15,6 +16,7 @@ render(){
               <div className="frontSecondPageContent__contact--avatar">
                 <div className="my-avatar"></div>
                 <h3>Yu Liu</h3>
+                <p>[ Web  Developer ]</p>
                 <div>
                   <span className='svg-icon'><SVG name='phone' className='icon-phone'/></span>
                   <span className='svg-icon'><SVG name='email' className='icon-email'/></span>
@@ -42,15 +44,21 @@ render(){
                     </tbody>
                   </table>
               </div>
-              <div className="frontSecondPageContent__contact--map">
+              {/* <div className="frontSecondPageContent__contact--map">
                   <MyGoogleMap />
-              </div>
+              </div> */}
             </div>
 
             <div className="frontSecondPageContent__timeline">
             </div>
 
           </div>
+
+
+          {/* <div className="front-page__image">
+                <img src={sheepGif} alt='sheep' />
+          </div> */}
+
         </div>
       </div>
     );
