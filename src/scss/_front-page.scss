@@ -3,8 +3,16 @@
   position: absolute;
   z-index: 10;
   width: 100%;
-  box-shadow: 0px 2px 3px #e5e5e5;
+  box-shadow: 0px 2px 3px #333;
   top: 0%;
+  background:url(./img/bg-mountain.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: 0rem -12rem;
+
+  @include breakpoint(m){
+    background-position: 0rem -5rem;
+  }
 }
 
 
@@ -39,12 +47,16 @@
 
 
     h1{
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: #444;
       font-family: 'Covered By Your Grace', cursive;
       letter-spacing: 7px;
       margin-bottom: 1rem;
+
+      @include breakpoint(m){
+        font-size: 3.5rem;
+      }
     }
 
     h1:after{
@@ -166,7 +178,7 @@
 }
 
 .icon-profession-active{
-  fill: #e08f59!important;
+  fill: #473025!important;
   @include breakpoint(m){
     fill: #473025 !important;
   }
@@ -291,5 +303,5 @@
 .front-page-about{
   width: 100vw;
   overflow: auto;
-  background: #f1f1f1;
+  background: #f5f5f5;
 }
