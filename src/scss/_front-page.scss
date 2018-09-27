@@ -1,17 +1,26 @@
+$panel-shadow: 1px 1px 5px #e5e5e5;
+$panel-color: #fff;
 
 .front-page-land{
   position: absolute;
   z-index: 10;
   width: 100%;
-  box-shadow: 0px 2px 3px #333;
+  box-shadow: 0px 0px 1px #333;
   top: 0%;
   background:url(./img/bg-mountain.jpg);
   background-size: auto;
   background-repeat: no-repeat;
-  background-position: 0rem -12rem;
+  background-position: 0rem -16rem;
 
   @include breakpoint(m){
     background-position: 0rem -5rem;
+  }
+
+  .container{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      position: relative;
   }
 }
 
@@ -21,27 +30,23 @@
   // background-color: #41b39e;
   background-color: #fff;
   height: 100%;
-  overflow: hidden;
 
-  .container{
-      display: flex;
-      align-items: center;
-      height: 100%;
-      position: relative;
-  }
+
 
   &__content{
     flex-basis: 100%;
-    margin-top: -20%;
+    margin-top: -35%;
     position: relative;
     text-align: center;
     z-index: 1;
+    transform: scale(0.9);
       @include breakpoint(s){
           margin-top: 0;
       }
     @include breakpoint(m){
       margin-top: -10rem;
       text-align: center;
+      transform: scale(1);
     }
 
 
@@ -143,22 +148,7 @@
   }
 
 
-    img{
-      position: absolute;
-      width: 1160px;
-      bottom: -50%;
-      right: -50%;
-      z-index: 0;
-      opacity: 0.03;
 
-      @include breakpoint(l){
-        width: 430px;
-        bottom: -5rem;
-        right: 0;
-        opacity: 1;
-      }
-
-    }
 
     .arrow-down{
       width: 40px;
@@ -173,6 +163,8 @@
       }
       @include breakpoint(l){
         left: 45%;
+        bottom: 11rem;
+        width: 50px;
       }
     }
 }
@@ -193,25 +185,196 @@
     width: 120px;
     height: 120px;
     border-radius: 100%;
-    box-shadow: 1px 2px 10px #c5c5c5;
-    background-color: #fff;
+    box-shadow: $panel-shadow;
+    background-color: $panel-color;
     margin: auto;
 }
 
 
 .frontSecondPageContent{
   display: flex;
-  margin: 0;
   width: 100%;
-  padding: 6rem 0 9rem 0;
+  flex-wrap: wrap;
+  transform: scale(0.9);
+  padding: 5% 0 10% 0;
+  &::-webkit-scrollbar { width: 0 !important }
+  @include breakpoint(s){
+      margin-top: 0;
+  }
+  @include breakpoint(m){
+padding: 7% 0 10% 0;
+      transform: scale(1);
+  }
+  @include breakpoint(l){
+
+      transform: scale(1);
+  }
 
 
+  &__companyReference{
+    flex-basis: 100%;
+    order: 2;
+
+    @include breakpoint(m){
+      order: 4;
+    }
+
+    @include breakpoint(l){
+      flex-basis: 20%;
+      margin-left: 1.125rem;
+    }
+
+
+    h4{
+      font-size: .8rem;
+      margin-bottom: .5rem;
+    }
+
+    p{
+      font-size: .75rem;
+    }
+    img{
+      max-width: 12rem;
+      margin: 1rem 0;
+    }
+    &--company{
+      box-shadow: 1px 1px 1px #e5e5e5;
+      background: #fff;
+      height: fit-content;
+      margin-bottom: 1.125rem;
+      padding: 1rem 1.5rem;
+
+    }
+  }
+
+  &__timeline{
+    flex-basis: 100%;
+    order: 3;
+    @include breakpoint(m){
+      flex: 1;
+      margin-left: 1.125rem;
+      order: 2;
+    }
+
+
+
+
+    &__positionWrapper{
+      background: #fff;
+      box-shadow: 1px 1px 1px #e5e5e5;
+      position: relative;
+      padding: 1rem 1.5rem;
+      display: flex;
+      margin-bottom: 3rem;
+      text-align: left;
+      flex-direction: column;
+      cursor: pointer;
+      @include breakpoint(m){
+        flex-direction: row;
+      }
+      svg{
+          width: 20px;
+          fill:#fff;
+      }
+      .timeline-icon{
+        position: absolute;
+        background: #202020;
+        -webkit-box-shadow: 1px 2px 10px #c5c5c5;
+        box-shadow: 1px 2px 10px #c5c5c5;
+        top: -0.5rem;
+        left: 2rem;
+        height: 2.4rem;
+        width: 2.4rem;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+    }
+
+    &__detailWrapper{
+
+      @extend .frontSecondPageContent__timeline__positionWrapper;
+      margin-top: -1rem;
+      flex-direction: column !important;
+      background: #f9f9f9;
+      cursor: default;
+
+
+      .marker-what-i-do{
+        text-align: right;
+        color: #888;
+        border-bottom: 1px solid #999;
+        margin-bottom: 1rem;
+        width: 75%;
+        margin-left: auto;
+        padding-bottom: .5rem;
+        font-weight: 600;
+        font-size: .875rem;
+      }
+
+      table{
+        font-size: 0.875rem;
+        padding-left: 1.4rem;
+      }
+
+      table tr {
+        display: block;
+        margin-bottom: .5rem;
+      }
+
+      table td:first-child{
+        content: '';
+        display: inline-block;
+        background: #444;
+        width: .15rem;
+        height: .15rem;
+        border-radius: 100%;
+        margin-right: 1rem;
+        vertical-align: text-top;
+      }
+
+      table td{
+        display: inline-block;
+        width: 90%;
+        line-height: 20px;
+        @include breakpoint(m){
+          width: 94%;
+        }
+      }
+
+    }
+
+    &--worktitle{
+      margin-left: 4.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #000;
+      span{
+        font-size: .875rem;
+        display: block;
+        opacity: .8;
+        margin-top: .4rem;
+        font-weight: normal;
+      }
+    }
+    &--years{
+      margin-left: 4.5rem;
+      font-size: 0.875rem;
+      margin-top: .5rem;
+      @include breakpoint(m){
+        margin-left: auto;
+        margin-top: 0;
+      }
+    }
+  }
 
   &__contact{
-    display: flex;
+
     flex-wrap: wrap;
     flex-basis: 100%;
-
+    margin-bottom: 1.125rem;
 
     @include breakpoint(m){
       flex-basis: 230px;
@@ -222,11 +385,12 @@
     }
 
     &--avatar{
-      background: #f9f9f9;
+      background: $panel-color;
       padding: 1.5rem 1rem;
       text-align: center;
-      box-shadow: 2px 1px 5px #e5e5e5;
+      box-shadow: $panel-shadow;
       flex-basis: 100%;
+      height: fit-content;
 
       svg{
         fill: #040404;
@@ -265,11 +429,11 @@
       font-size: 0.76rem;
       font-weight: 600;
       color: #565656;
-      background: #f8f8f8;
+      background: $panel-color;
       margin-top: 1.125rem;
-      margin-right: 1.125rem;
-      box-shadow: 2px 1px 5px #e5e5e5;
-      flex-basis: 50%;
+      box-shadow: $panel-shadow;
+      flex-basis: 100%;
+      height: fit-content;
 
       @include breakpoint(m){
         flex-basis: 100%;
@@ -298,10 +462,28 @@
 
 
   }
+
+
 }
 
 .front-page-about{
   width: 100vw;
   overflow: auto;
+  background: #f4f4f4;
+}
+
+
+.connect-line{
+  background: #444;
+  width: .2rem;
+  height: 5rem;
+  position: absolute;
+  display: block;
+  left: 3.125rem;
+  top: -3rem;
+  z-index: -1;
+}
+
+.slider .slider-container .inner-container .static-block.pausing{
   background: #f5f5f5;
 }

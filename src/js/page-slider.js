@@ -79,7 +79,7 @@ class Slider extends React.Component<any, any> {
             <div className={index == this.state.currentIndex ? `slider-container index-${index} current` : `slider-container index-${index}`}
                 ref={(component: any) => this.containers[index] = component}>
 
-                <div class="inner-container"><div class="static-block pausing"><HomePageTwo /></div></div>
+                <div className="inner-container"><div className="static-block pausing"><HomePageTwo /></div></div>
 
 
             </div>
@@ -120,5 +120,4 @@ class Slider extends React.Component<any, any> {
 
 }
 
-// ReactDOM.render(<Slider data={data} />,document.getElementById('root'));
 export default Slider;
