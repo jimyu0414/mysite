@@ -7,14 +7,10 @@ $panel-color: #fff;
   width: 100%;
   box-shadow: 0px 0px 1px #333;
   top: 0%;
-  background:url(./img/bg-mountain.jpg);
-  background-size: auto;
+  background:url(./img/bg-rainbow-color-pencil.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0rem -16rem;
 
-  @include breakpoint(m){
-    background-position: 0rem -5rem;
-  }
 
   .container{
       display: flex;
@@ -116,18 +112,14 @@ $panel-color: #fff;
 
     li{
       display: inline-block;
+      background: rgba(255,255,255,.99);
+      border-radius: 100%;
+      padding: 10px;
+      margin-left: -5px;
     }
 
-    li:not(:first-of-type){
-      margin-left: .875rem;
-      @include breakpoint(m){
-        margin-left: 1.25rem;
-      }
-    }
 
-    li:nth-child(4){
-      margin-right: 1rem;
-    }
+
 
     li:nth-child(2){
       .icon-profession{
@@ -178,7 +170,7 @@ $panel-color: #fff;
 
 .my-avatar{
   content: "";
-    background: url(/static/media/smoke-sheep.3ef0f1bd.gif);
+    background: url(./img/smoke-sheep.gif);
     background-repeat: no-repeat;
     background-size: 104px 140px;
     background-position: 17px 20px;
@@ -237,13 +229,22 @@ padding: 7% 0 10% 0;
       max-width: 12rem;
       margin: 1rem 0;
     }
+    ul{
+      margin-top: 0;
+      p{
+        margin-bottom: 0;
+      }
+    }
     &--company{
       box-shadow: 1px 1px 1px #e5e5e5;
       background: #fff;
       height: fit-content;
       margin-bottom: 1.125rem;
       padding: 1rem 1.5rem;
-
+      a{
+        font-size: .75rem;
+        color: #1B487B;
+      }
     }
   }
 
@@ -268,6 +269,11 @@ padding: 7% 0 10% 0;
       margin-bottom: 3rem;
       text-align: left;
       flex-direction: column;
+
+      -webkit-transition: all 1s; /* Safari */
+      transition: all 1s;
+
+
       cursor: pointer;
       @include breakpoint(m){
         flex-direction: row;
@@ -276,9 +282,10 @@ padding: 7% 0 10% 0;
           width: 20px;
           fill:#fff;
       }
+
       .timeline-icon{
         position: absolute;
-        background: #202020;
+        background: #1B487B;
         -webkit-box-shadow: 1px 2px 10px #c5c5c5;
         box-shadow: 1px 2px 10px #c5c5c5;
         top: -0.5rem;
@@ -406,10 +413,8 @@ padding: 7% 0 10% 0;
         box-shadow: 1px 2px 10px #c5c5c5;
       }
       .svg-icon:first-child{
-        background: #202020;
-        svg{
-          fill: #fff;
-        }
+
+
       }
     }
 
@@ -469,7 +474,12 @@ padding: 7% 0 10% 0;
 .front-page-about{
   width: 100vw;
   overflow: auto;
-  background: #f4f4f4;
+  background:url(./img/bg-area-gray.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include breakpoint(m){
+    background-size: unset;
+  }
 }
 
 

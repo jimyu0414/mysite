@@ -1,7 +1,7 @@
 import React from 'react';
 import SVG from './svg';
 import MyGoogleMap from './google-map-component';
-import GoogleMaps from 'simple-react-google-maps';
+
 import LOGOJUST from '../img/logo-justgroup.gif';
 import LOGOLADOO from '../img/logo-ladoo.png';
 import LOGOCENTRORA from '../img/logo-centrora.png';
@@ -123,7 +123,7 @@ render(){
 
               <div className={this.state.justGroupActive ? 'frontSecondPageContent__timeline__detailWrapper workdropdownreverse displayNone' : 'frontSecondPageContent__timeline__detailWrapper workdropdown'}>
                 <div className='connect-line'></div>
-                <div className='marker-what-i-do'>Things I do</div>
+                <div className='marker-what-i-do'>What I do</div>
                   <table>
                   <tbody>
                     <tr>
@@ -272,28 +272,87 @@ Graphic content Support
               <div className={this.state.refJustGroup}>
               <img style={{margin:'1.5rem 0 1rem 0',}} src={LOGOJUST}/>
                 <h4>Company Reference:</h4>
-                <p>http://www.justgroup.com.au/</p>
+                <a target="_blank" href="http://www.justgroup.com.au/">http://www.justgroup.com.au/</a>
                 <h4>Project Reference:</h4>
+                <ul>
+                  <li>
+                    <p>Peteralexander</p>
+                    <a target="_blank" href="https://www.peteralexander.com.au">
+                    https://www.peteralexander.com.au</a>
+                  </li>
+                  <li>
+                    <p>Smiggle</p>
+                    <a target="_blank" href="https://www.smiggle.com.au/">
+                    https://www.smiggle.com.au</a>
+                  </li>
+                  <li>
+                    <p>Portmans</p>
+                    <a target="_blank" href="https://www.portmans.com.au">
+                    https://www.portmans.com.au</a>
+                  </li>
+                  <li>
+                    <p>Dotti</p>
+                    <a target="_blank" href="https://www.dotti.com.au">
+                    https://www.dotti.com.au</a>
+                  </li>
+                  <li>
+                    <p>Jacquie</p>
+                    <a target="_blank" href="https://www.jacquie.com.au">
+                    https://www.jacquie.com.au</a>
+                  </li>
+                  <li>
+                    <p>Just Jeans</p>
+                    <a target="_blank" href="https://www.justjeans.com.au">
+                    https://www.justjeans.com.au</a>
+                  </li>
+                  <li>
+                    <p>Jayjays</p>
+                    <a target="_blank" href="https://www.jayjays.com.au">
+                    https://www.jayjays.com.au</a>
+                  </li>
+                </ul>
               </div>
 
               <div className={this.state.refLadoo}>
                 <img src={LOGOLADOO}/>
                 <h4>Company Reference:</h4>
-                <p>https://ladoo.com.au/</p>
+                <a target="_blank" href="https://ladoo.com.au/">https://ladoo.com.au/</a>
                 <h4>Project Reference:</h4>
+                <ul>
+                  <li>
+                    <p>DELWP</p>
+                    <a target="_blank" href="https://www.environment.vic.gov.au/">
+                    https://www.environment.vic.gov.au</a>
+                  </li>
+                  <li>
+                    <p>Urban Design Guidelines</p>
+                    <a target="_blank" href="http://www.urban-design-guidelines.planning.vic.gov.au">
+                    http://www.urban-design-guidelines.planning.vic.gov.au</a>
+                  </li>
+                  <li>
+                    <p>Cags</p>
+                    <a target="_blank" href="http://www.cagsinfo.net/">
+                    http://www.cagsinfo.net</a>
+                  </li>
+                  <li>
+                    <p>Plan Melbourne</p>
+                    <a target="_blank" href="https://www.planning.vic.gov.au/">
+                    https://www.planning.vic.gov.au/</a>
+                  </li>
+                </ul>
               </div>
 
               <div className={this.state.refCentrora}>
                 <img src={LOGOCENTRORA}/>
                 <h4>Company Reference:</h4>
-                <p>https://www.centrora.com/</p>
+                <a target="_blank" href="https://www.centrora.com/">https://www.centrora.com/</a>
                 <h4>Project Reference:</h4>
               </div>
 
               <div className={this.state.refFly}>
                 <img src={LGOGOFLY}/>
                 <h4>Company Reference:</h4>
-                <p>https://www.flyonit.com.au/</p>
+                <a target="_blank" href="https://www.flyonit.com.au/">https://www.flyonit.com.au/</a>
                 <h4>Project Reference:</h4>
               </div>
 
